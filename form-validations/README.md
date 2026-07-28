@@ -1,276 +1,121 @@
 <h1>
   <span class="headline">React Forms and Lifting State</span>
-  <span class="subhead">Lifting State</span>
+  <span class="subhead">Form Validation</span>
 </h1>
 
-**Learning objective:** By the end of this lesson, students will be able to lift state into a parent component and pass state and functions to child components through props.
+**Learning objective:** By the end of this lesson, students will be able to prevent invalid form submissions and display a helpful error message.
 
-## Starting point
+## What is form validation?
 
-Previously, we built a `Form` component that:
+Form validation checks the user's information before allowing the form to be submitted.
 
-* Stores the current input values in `formData`
-* Stores submitted contacts in `contacts`
-* Adds a contact inside `handleSubmit`
-* Maps through the contacts and displays them
+For our contact form, we want to make sure:
 
-This works, but the `Form` component is now responsible for two different jobs:
+* The name is not empty
+* The email is not empty
+* The phone number is not empty
 
-1. Collecting information from the user
-2. Displaying the submitted contacts
+If information is missing, we will display an error message instead of adding the contact.
 
-We want to separate these responsibilities.
+---
 
-## Our new component structure
+## Add built-in validation
 
-We will create three components:
+HTML provides some validation through input attributes.
 
-```txt
-App
-├── Form
-└── Contacts
-```
-
-Each component will have a separate responsibility:
-
-* `App` stores the contacts
-* `Form` creates new contacts
-* `Contacts` displays the contacts
-
-However, this creates a problem.
-
-`Form` needs to update the contacts, while `Contacts` needs to read the contacts.
-
-Sibling components cannot directly share state with one another:
-
-```txt
-Form        Contacts
-  ✖────────────✖
-```
-
-Instead, we place the state in their closest shared parent:
-
-```txt
-           App
-        contacts
-        /      \
-     Form     Contacts
-```
-
-Moving state into a shared parent component is called **lifting state**.
-
-
-## Step 1: Move `contacts` into `App`
-
-Open `App.jsx` and import `useState`.
-
-Create the `contacts` state inside `App`:
+Add `required` to each input:
 
 ```jsx
-import { useState } from 'react'
-import Form from './components/Form/Form'
-import Contacts from './components/Contacts/Contacts'
+Name:
+<input
+  type="text"
+  name="name"
+  value={formData.name}
+  onChange={handleChange}
+  required
+/>
 
-const App = () => {
-  const [contacts, setContacts] = useState([])
+Email:
+<input
+  type="email"
+  name="email"
+  value={formData.email}
+  onChange={handleChange}
+  required
+/>
 
-  return (
-    <div>
-      <h1>Contact List</h1>
-
-      <Form />
-      <Contacts />
-    </div>
-  )
-}
-
-export default App
-```
-
-The contacts array now belongs to `App`.
-
-```jsx
-const [contacts, setContacts] = useState([])
-```
-
-Remove this line from the `Form` component:
-
-```jsx
-const [contacts, setContacts] = useState([])
-```
-
-The `formData` state should remain inside `Form`:
-
-```jsx
-const [formData, setFormData] = useState(initialState)
-```
-
-Only `Form` needs to know what the user is currently typing, so there is no reason to lift `formData`.
-
-
-## Step 2: Pass state to `Contacts`
-
-The `Contacts` component needs the contacts array so it can display each contact.
-
-Pass `contacts` from `App` to `Contacts` as a prop:
-
-```jsx
-<Contacts contacts={contacts} />
-```
-
-Our `App` component now looks like this:
-
-```jsx
-import { useState } from 'react'
-import Form from './components/Form/Form'
-import Contacts from './components/Contacts/Contacts'
-
-const App = () => {
-  const [contacts, setContacts] = useState([])
-
-  return (
-    <div>
-      <h1>Contact List</h1>
-
-      <Form />
-      <Contacts contacts={contacts} />
-    </div>
-  )
-}
-
-export default App
-```
-
-The data moves down from `App` to `Contacts`:
-
-```txt
-App
-│
-│ contacts
-▼
-Contacts
-```
-
-## Step 3: Create the `Contacts` component
-
-Create a new file:
-
-```txt
-src/components/Contacts/Contacts.jsx
-```
-
-The `Contacts` component receives the contacts through props:
-
-```jsx
-const Contacts = ({ contacts }) => {
-  return (
-    <div>
-      <h2>Contacts</h2>
-
-      {contacts.map((contact) => (
-        <div key={contact.id}>
-          <h3>{contact.name}</h3>
-          <p>Email: {contact.email}</p>
-          <p>Phone: {contact.phone}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-export default Contacts
-```
-
-We destructure `contacts` from the props object:
-
-```jsx
-const Contacts = ({ contacts }) => {
-```
-
-We can then map through the array:
-
-```jsx
-contacts.map((contact) => (
-```
-
-The `Contacts` component does not change the array. It only receives and displays it.
-
-
-## Step 4: Pass the updater function to `Form`
-
-The `contacts` state now belongs to `App`, but `Form` needs to add new contacts to it.
-
-We can pass both `contacts` and `setContacts` to `Form` as props:
-
-```jsx
-<Form
-  contacts={contacts}
-  setContacts={setContacts}
+Phone:
+<input
+  type="text"
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+  required
 />
 ```
 
-Our updated `App.jsx` is:
+The `required` attribute prevents the form from being submitted when an input is empty.
+
+The email input also uses:
 
 ```jsx
-import { useState } from 'react'
-import Form from './components/Form/Form'
-import Contacts from './components/Contacts/Contacts'
-
-const App = () => {
-  const [contacts, setContacts] = useState([])
-
-  return (
-    <div>
-      <h1>Contact List</h1>
-
-      <Form
-        contacts={contacts}
-        setContacts={setContacts}
-      />
-
-      <Contacts contacts={contacts} />
-    </div>
-  )
-}
-
-export default App
+type="email"
 ```
 
-Notice that both child components receive information from `App`:
+This asks the browser to check whether the value looks like an email address.
+
+For example:
 
 ```txt
-                 App
-          contacts, setContacts
-             /           \
-            ▼             ▼
-          Form         Contacts
+mona@example.com
 ```
 
-`Form` receives:
+The browser would reject a value such as:
 
-* `contacts`
-* `setContacts`
+```txt
+mona
+```
 
-`Contacts` receives:
+This is called **built-in browser validation**.
 
-* `contacts`
+---
 
+## Add an error message state
 
-## Step 5: Receive the props in `Form`
+We can also create our own validation using React.
 
-Update the beginning of the `Form` component:
+Inside `Form`, create state for an error message:
+
+```jsx
+const [errorMessage, setErrorMessage] = useState('')
+```
+
+The starting value is an empty string because there is no error when the component first loads.
 
 ```jsx
 const Form = ({ contacts, setContacts }) => {
+  const [formData, setFormData] = useState(initialState)
+  const [errorMessage, setErrorMessage] = useState('')
 ```
 
-The component can now use the contacts state that belongs to `App`.
+---
 
-The `handleSubmit` function can stay mostly the same:
+## Validate the form in `handleSubmit`
+
+Add a check near the beginning of `handleSubmit`:
 
 ```jsx
 const handleSubmit = (event) => {
   event.preventDefault()
+
+  if (
+    formData.name.trim() === '' ||
+    formData.email.trim() === '' ||
+    formData.phone.trim() === ''
+  ) {
+    setErrorMessage('Please complete every field.')
+    return
+  }
 
   const newContact = {
     ...formData,
@@ -282,114 +127,350 @@ const handleSubmit = (event) => {
 }
 ```
 
-Although `handleSubmit` runs inside `Form`, `setContacts` updates the state inside `App`.
+The `if` statement checks whether any field is empty.
 
+```jsx
+formData.name.trim() === ''
+```
 
-## Completed component structure
+The `.trim()` method removes extra spaces from the beginning and end of a string.
+
+Without `.trim()`, a user could enter only spaces:
 
 ```txt
-src
-├── components
-│   ├── Contacts
-│   │   └── Contacts.jsx
-│   └── Form
-│       └── Form.jsx
-├── App.jsx
-└── main.jsx
+"     "
 ```
 
-## Why did we lift `contacts` but not `formData`?
+That value is technically not an empty string.
 
-State should live in the closest component that needs to control it.
+After using `.trim()`, it becomes:
 
-Only `Form` needs the current form values:
-
-```jsx
-const [formData, setFormData] = useState(initialState)
+```txt
+""
 ```
 
-Therefore, `formData` stays inside `Form`.
+---
 
-Both `Form` and `Contacts` need access to the contacts array:
+## Why do we use `return`?
 
-* `Form` adds contacts
-* `Contacts` displays contacts
-
-Therefore, `contacts` moves into their shared parent, `App`.
-
-A useful question to ask is:
-
-> Which components need access to this state?
-
-If multiple sibling components need it, move it into their closest shared parent.
-
-
-## State versus props
-
-After lifting state, the components use the same information differently.
-
-### In `App`
-
-`contacts` is state:
+If the form is invalid, we run:
 
 ```jsx
-const [contacts, setContacts] = useState([])
+return
 ```
 
-### In `Form`
+This immediately stops `handleSubmit`.
 
-`contacts` and `setContacts` are props:
+The code below the `return` will not run, so the invalid contact will not be added to the array.
 
 ```jsx
+if (formData.name.trim() === '') {
+  setErrorMessage('Please enter a name.')
+  return
+}
+
+const newContact = {
+  ...formData,
+  id: crypto.randomUUID(),
+}
+```
+
+Without `return`, React would show the error but continue adding the contact.
+
+---
+
+## Display the error message
+
+Place the error message above the form:
+
+```jsx
+<h2>Add a Contact</h2>
+
+{errorMessage && (
+  <p>{errorMessage}</p>
+)}
+
+<form onSubmit={handleSubmit}>
+```
+
+This uses conditional rendering.
+
+If `errorMessage` is an empty string, nothing is displayed.
+
+If it contains a message, the paragraph appears:
+
+```txt
+Please complete every field.
+```
+
+---
+
+## Clear the error after a successful submission
+
+When the form is successfully submitted, clear the old error message:
+
+```jsx
+setErrorMessage('')
+```
+
+Add it after updating the contacts:
+
+```jsx
+const handleSubmit = (event) => {
+  event.preventDefault()
+
+  if (
+    formData.name.trim() === '' ||
+    formData.email.trim() === '' ||
+    formData.phone.trim() === ''
+  ) {
+    setErrorMessage('Please complete every field.')
+    return
+  }
+
+  const newContact = {
+    ...formData,
+    id: crypto.randomUUID(),
+  }
+
+  setContacts([...contacts, newContact])
+  setFormData(initialState)
+  setErrorMessage('')
+}
+```
+
+---
+
+## Avoid saving extra spaces
+
+We can also use `.trim()` when creating the new contact:
+
+```jsx
+const newContact = {
+  id: crypto.randomUUID(),
+  name: formData.name.trim(),
+  email: formData.email.trim(),
+  phone: formData.phone.trim(),
+}
+```
+
+Suppose the user enters:
+
+```txt
+"  Mona  "
+```
+
+The saved contact will contain:
+
+```txt
+"Mona"
+```
+
+This keeps our data cleaner.
+
+---
+
+## Updated `handleSubmit`
+
+```jsx
+const handleSubmit = (event) => {
+  event.preventDefault()
+
+  if (
+    formData.name.trim() === '' ||
+    formData.email.trim() === '' ||
+    formData.phone.trim() === ''
+  ) {
+    setErrorMessage('Please complete every field.')
+    return
+  }
+
+  const newContact = {
+    id: crypto.randomUUID(),
+    name: formData.name.trim(),
+    email: formData.email.trim(),
+    phone: formData.phone.trim(),
+  }
+
+  setContacts([...contacts, newContact])
+  setFormData(initialState)
+  setErrorMessage('')
+}
+```
+
+---
+
+## Updated `Form.jsx`
+
+```jsx
+import { useState } from 'react'
+
+const initialState = {
+  name: '',
+  email: '',
+  phone: '',
+}
+
 const Form = ({ contacts, setContacts }) => {
-```
+  const [formData, setFormData] = useState(initialState)
+  const [errorMessage, setErrorMessage] = useState('')
 
-### In `Contacts`
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    })
+  }
 
-`contacts` is a prop:
+  const handleSubmit = (event) => {
+    event.preventDefault()
 
-```jsx
-const Contacts = ({ contacts }) => {
-```
+    if (
+      formData.name.trim() === '' ||
+      formData.email.trim() === '' ||
+      formData.phone.trim() === ''
+    ) {
+      setErrorMessage('Please complete every field.')
+      return
+    }
 
-The same value can be state in one component and a prop in another component.
+    const newContact = {
+      id: crypto.randomUUID(),
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+    }
 
+    setContacts([...contacts, newContact])
+    setFormData(initialState)
+    setErrorMessage('')
+  }
 
-## You Do
-
-Add a component called `ContactCount`.
-
-It should display the number of contacts:
-
-```txt
-Total contacts: 3
-```
-
-Create the component:
-
-```jsx
-const ContactCount = ({ contacts }) => {
   return (
-    <p>Total contacts: {contacts.length}</p>
+    <div>
+      <h2>Add a Contact</h2>
+
+      {errorMessage && (
+        <p>{errorMessage}</p>
+      )}
+
+      <form onSubmit={handleSubmit}>
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+
+        Email:
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        Phone:
+        <input
+          type="text"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit">Add Contact</button>
+      </form>
+    </div>
   )
 }
 
-export default ContactCount
+export default Form
 ```
 
-Import it into `App` and pass it the contacts array:
+---
+
+## Browser validation versus React validation
+
+The form now uses two kinds of validation.
+
+### Browser validation
+
+These attributes are handled by the browser:
 
 ```jsx
-<ContactCount contacts={contacts} />
+type="email"
+required
 ```
 
-Your component hierarchy will now be:
+They provide quick validation without requiring much JavaScript.
 
-```txt
-App
-├── Form
-├── ContactCount
-└── Contacts
+### React validation
+
+This code is handled inside `handleSubmit`:
+
+```jsx
+if (
+  formData.name.trim() === '' ||
+  formData.email.trim() === '' ||
+  formData.phone.trim() === ''
+) {
+  setErrorMessage('Please complete every field.')
+  return
+}
 ```
 
-All three child components use the contacts state owned by `App`.
+React validation gives us more control over:
+
+* What rules we check
+* What messages we show
+* What happens when the information is invalid
+
+In a real application, the back-end should also validate submitted information. Front-end validation improves the user experience, but it should not be the application's only protection.
+
+---
+
+## You Do
+
+Require the contact's name to contain at least two characters.
+
+Add another check inside `handleSubmit`:
+
+```jsx
+if (formData.name.trim().length < 2) {
+  setErrorMessage('The name must contain at least two characters.')
+  return
+}
+```
+
+Place this check after checking for empty fields:
+
+```jsx
+if (
+  formData.name.trim() === '' ||
+  formData.email.trim() === '' ||
+  formData.phone.trim() === ''
+) {
+  setErrorMessage('Please complete every field.')
+  return
+}
+
+if (formData.name.trim().length < 2) {
+  setErrorMessage('The name must contain at least two characters.')
+  return
+}
+```
+
+### Bonus
+
+Require the phone number to contain at least eight characters:
+
+```jsx
+if (formData.phone.trim().length < 8) {
+  setErrorMessage('The phone number must contain at least eight characters.')
+  return
+}
+```

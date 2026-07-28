@@ -13,9 +13,10 @@ In this module, we'll learn how to create and control forms in React using compo
 | ------ | ------ |
 | [Setup](./setup/README.md)                                                 |Setting up the development environment.   |
 | [Create the Form Component](./concepts/README.md)                        |Setting up the form. |
-| [Create the Tnitial State](./controlled-inputs/README.md)           |Understanding the relationship between state variables and inputs.|
+| [Create the Initial State](./controlled-inputs/README.md)           |Understanding the relationship between state variables and inputs.|
 | [Give the Form Functionality](./managing-controlled-forms/README.md)         |Control a form's state in React. |
 | [Handling Form Submission](./handling-form-submission/README.md)           |Handling form submission events, and their aftermath. |
+| [Lifting State](./lifting-state/README.md)                           |lift state into a parent component.|
 | [Lifting State](./form-validations/README.md)                           |lift state into a parent component.|
 | **Total content**                                                          | 46 min | 
 

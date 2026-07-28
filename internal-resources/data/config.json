@@ -30,7 +30,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Concepts",
+          "friendlyName": "Create the Form Component",
           "dirName": "concepts",
           "type": "Content",
           "skill": "",
@@ -40,7 +40,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Controlled Inputs",
+          "friendlyName": "Create the Initial State",
           "dirName": "controlled-inputs",
           "type": "Content",
           "skill": "",
@@ -50,7 +50,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Managing Controlled Forms",
+          "friendlyName": "Give the Form Functionality",
           "dirName": "managing-controlled-forms",
           "type": "Content",
           "skill": "",
@@ -70,6 +70,16 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
+          "friendlyName": "Lifting State",
+          "dirName": "lifting-state",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
           "friendlyName": "Form Validations",
           "dirName": "form-validations",
           "type": "Level Up content",
@@ -84,7 +94,7 @@
       "isHeaderModuleNavShown": true,
       "isHeaderHomeNavShown": true,
       "isHeaderMicrolessonNavShown": true,
-      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderMicrolessonVideoLinkShown": false,
       "isHeaderNavSettingsShown": true,
       "isFooterCopyrightShown": true,
       "isFooterLessonNavShown": true,
@@ -119,7 +129,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Concepts",
+          "friendlyName": "Create the Form Component",
           "dirName": "concepts",
           "type": "Content",
           "skill": "",
@@ -129,7 +139,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Controlled Inputs",
+          "friendlyName": "Create the Initial State",
           "dirName": "controlled-inputs",
           "type": "Content",
           "skill": "",
@@ -139,7 +149,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Managing Controlled Forms",
+          "friendlyName": "Give the Form Functionality",
           "dirName": "managing-controlled-forms",
           "type": "Content",
           "skill": "",
@@ -159,6 +169,16 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
+          "friendlyName": "Lifting State",
+          "dirName": "lifting-state",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
           "friendlyName": "Form Validations",
           "dirName": "form-validations",
           "type": "Level Up content",
@@ -173,7 +193,7 @@
       "isHeaderModuleNavShown": true,
       "isHeaderHomeNavShown": true,
       "isHeaderMicrolessonNavShown": true,
-      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderMicrolessonVideoLinkShown": false,
       "isHeaderNavSettingsShown": true,
       "isFooterCopyrightShown": true,
       "isFooterLessonNavShown": true,
@@ -208,7 +228,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Concepts",
+          "friendlyName": "Create the Form Component",
           "dirName": "concepts",
           "type": "Content",
           "skill": "",
@@ -218,7 +238,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Controlled Inputs",
+          "friendlyName": "Create the Initial State",
           "dirName": "controlled-inputs",
           "type": "Content",
           "skill": "",
@@ -228,7 +248,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Managing Controlled Forms",
+          "friendlyName": "Give the Form Functionality",
           "dirName": "managing-controlled-forms",
           "type": "Content",
           "skill": "",
@@ -248,9 +268,19 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
+          "friendlyName": "Lifting State",
+          "dirName": "lifting-state",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
           "friendlyName": "Form Validations",
           "dirName": "form-validations",
-          "type": "Content",
+          "type": "Level Up content",
           "skill": "",
           "learningObjective": "",
           "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
@@ -262,7 +292,7 @@
       "isHeaderModuleNavShown": true,
       "isHeaderHomeNavShown": true,
       "isHeaderMicrolessonNavShown": true,
-      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderMicrolessonVideoLinkShown": false,
       "isHeaderNavSettingsShown": true,
       "isFooterCopyrightShown": true,
       "isFooterLessonNavShown": true,
