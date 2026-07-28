@@ -365,23 +365,9 @@ It should display the number of contacts:
 Total contacts: 3
 ```
 
-Create the component:
+Create the component.
 
-```jsx
-const ContactCount = ({ contacts }) => {
-  return (
-    <p>Total contacts: {contacts.length}</p>
-  )
-}
-
-export default ContactCount
-```
-
-Import it into `App` and pass it the contacts array:
-
-```jsx
-<ContactCount contacts={contacts} />
-```
+Import it into `App`.
 
 Your component hierarchy will now be:
 
@@ -392,4 +378,4 @@ App
 └── Contacts
 ```
 
-All three child components use the contacts state owned by `App`.
+All three child components should use the contacts state owned by `App`.
