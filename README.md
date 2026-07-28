@@ -1,6 +1,6 @@
 <h1>
   <span class="prefix"></span>
-  <span class="headline">Controlled Forms in React</span>
+  <span class="headline">React Forms and Lifting State</span>
 </h1>
 
 ## About
