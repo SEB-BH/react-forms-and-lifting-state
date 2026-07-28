@@ -19,9 +19,10 @@ In this module, we'll learn how to create and control forms in React using compo
 | [Lifting State](./lifting-state/README.md)                           |lift state into a parent component.|
 | **Total content**                                                          | 46 min | 
 
-| Level Up 🚀 |  |
+| Level Up 🚀 | -- |
 | ------ | ------ |
 | [Form Validations](./form-validations/README.md)                           |lift state into a parent component.|
+
 ## References
 
 📖 [Reference Materials](./references/README.md)
