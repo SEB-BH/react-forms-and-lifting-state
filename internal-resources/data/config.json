@@ -1,0 +1,284 @@
+{
+  "org": {
+    "friendlyName": "SEB-BH",
+    "name": "SEB-BH"
+  },
+  "repo": {
+    "friendlyName": "React Forms and Lifting State",
+    "name": "react-forms-and-lifting-state",
+    "type": "Lesson",
+    "about": "",
+    "starterCode": "",
+    "solutionCode": "",
+    "deployedSite": ""
+  },
+  "courses": [
+    {
+      "name": "rds",
+      "courseAcronym": "",
+      "courseFullName": "",
+      "logoUrl": "",
+      "microlessons": [
+        {
+          "friendlyName": "Setup",
+          "dirName": "setup",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/cz3lva23to",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Concepts",
+          "dirName": "concepts",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/hk8ci1ndaj",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Controlled Inputs",
+          "dirName": "controlled-inputs",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/8x33kkj9e5",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Managing Controlled Forms",
+          "dirName": "managing-controlled-forms",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/v8nvp8arkl",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Handling Form Submission",
+          "dirName": "handling-form-submission",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/5bweqi4a99",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Form Validations",
+          "dirName": "form-validations",
+          "type": "Level Up content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        }
+      ],
+      "isHeaderShown": true,
+      "isHeaderModuleNavShown": true,
+      "isHeaderHomeNavShown": true,
+      "isHeaderMicrolessonNavShown": true,
+      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderNavSettingsShown": true,
+      "isFooterCopyrightShown": true,
+      "isFooterLessonNavShown": true,
+      "isStickyNavSettingShown": true,
+      "isStickyNavAllowed": true,
+      "isFixedNavAllowed": true,
+      "isStickyNavDefault": true,
+      "isStickyNavForcedDefault": false,
+      "isFixedNavForcedDefault": false,
+      "isDarkModeSettingShown": true,
+      "isDarkModeAllowed": true,
+      "isLightModeAllowed": true,
+      "isLightModeDefault": true,
+      "isLightModeForcedDefault": false,
+      "isDarkModeForcedDefault": false,
+      "isActivityTimeShown": true
+    },
+    {
+      "name": "seb",
+      "courseAcronym": "",
+      "courseFullName": "",
+      "logoUrl": "",
+      "microlessons": [
+        {
+          "friendlyName": "Setup",
+          "dirName": "setup",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/cz3lva23to",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Concepts",
+          "dirName": "concepts",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/hk8ci1ndaj",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Controlled Inputs",
+          "dirName": "controlled-inputs",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/8x33kkj9e5",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Managing Controlled Forms",
+          "dirName": "managing-controlled-forms",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/v8nvp8arkl",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Handling Form Submission",
+          "dirName": "handling-form-submission",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/5bweqi4a99",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Form Validations",
+          "dirName": "form-validations",
+          "type": "Level Up content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        }
+      ],
+      "isHeaderShown": true,
+      "isHeaderModuleNavShown": true,
+      "isHeaderHomeNavShown": true,
+      "isHeaderMicrolessonNavShown": true,
+      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderNavSettingsShown": true,
+      "isFooterCopyrightShown": true,
+      "isFooterLessonNavShown": true,
+      "isStickyNavSettingShown": true,
+      "isStickyNavAllowed": true,
+      "isFixedNavAllowed": true,
+      "isStickyNavDefault": true,
+      "isStickyNavForcedDefault": false,
+      "isFixedNavForcedDefault": false,
+      "isDarkModeSettingShown": true,
+      "isDarkModeAllowed": true,
+      "isLightModeAllowed": true,
+      "isLightModeDefault": true,
+      "isLightModeForcedDefault": false,
+      "isDarkModeForcedDefault": false,
+      "isActivityTimeShown": true
+    },
+    {
+      "name": "fallback",
+      "courseAcronym": "",
+      "courseFullName": "",
+      "logoUrl": "",
+      "microlessons": [
+        {
+          "friendlyName": "Setup",
+          "dirName": "setup",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/cz3lva23to",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Concepts",
+          "dirName": "concepts",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/hk8ci1ndaj",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Controlled Inputs",
+          "dirName": "controlled-inputs",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/8x33kkj9e5",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Managing Controlled Forms",
+          "dirName": "managing-controlled-forms",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/v8nvp8arkl",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Handling Form Submission",
+          "dirName": "handling-form-submission",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/5bweqi4a99",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        },
+        {
+          "friendlyName": "Form Validations",
+          "dirName": "form-validations",
+          "type": "Content",
+          "skill": "",
+          "learningObjective": "",
+          "videoUrl": "https://generalassembly.wistia.com/medias/w12crjh2r9",
+          "videoLengthInMinutes": 0,
+          "estimatedDeliveryTimeInMinutes": 0
+        }
+      ],
+      "isHeaderShown": true,
+      "isHeaderModuleNavShown": true,
+      "isHeaderHomeNavShown": true,
+      "isHeaderMicrolessonNavShown": true,
+      "isHeaderMicrolessonVideoLinkShown": true,
+      "isHeaderNavSettingsShown": true,
+      "isFooterCopyrightShown": true,
+      "isFooterLessonNavShown": true,
+      "isStickyNavSettingShown": true,
+      "isStickyNavAllowed": true,
+      "isFixedNavAllowed": true,
+      "isStickyNavDefault": true,
+      "isStickyNavForcedDefault": false,
+      "isFixedNavForcedDefault": false,
+      "isDarkModeSettingShown": true,
+      "isDarkModeAllowed": true,
+      "isLightModeAllowed": true,
+      "isLightModeDefault": true,
+      "isLightModeForcedDefault": false,
+      "isDarkModeForcedDefault": false,
+      "isActivityTimeShown": true
+    }
+  ]
+}

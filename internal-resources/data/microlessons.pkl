@@ -1,0 +1,53 @@
+import "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/static/v2/pkl/template.pkl" as Template
+
+// Add microlessons here, in the order they should be delivered
+
+setup = new Template.Microlesson {
+  friendlyName = "Setup"
+  dirName = "setup"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/cz3lva23to"
+}
+
+concepts = new Template.Microlesson {
+  friendlyName = "Concepts"
+  dirName = "concepts"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/hk8ci1ndaj"
+}
+
+controlledInputs = new Template.Microlesson {
+  friendlyName = "Controlled Inputs"
+  dirName = "controlled-inputs"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/8x33kkj9e5"
+}
+
+managingControlledForms = new Template.Microlesson {
+  friendlyName = "Managing Controlled Forms"
+  dirName = "managing-controlled-forms"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/v8nvp8arkl"
+}
+
+formStateAsASingleObject = new Template.Microlesson {
+  friendlyName = "Form State as a Single Object"
+  dirName = "form-state-as-a-single-object"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/cpfo7u54nf"
+}
+
+handlingFormSubmission = new Template.Microlesson {
+  friendlyName = "Handling Form Submission"
+  dirName = "handling-form-submission"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/5bweqi4a99"
+}
+
+formValidations = new Template.Microlesson {
+  friendlyName = "Form Validations"
+  dirName = "form-validations"
+  type = "Content"
+  videoUrl = "https://generalassembly.wistia.com/medias/w12crjh2r9"
+}
+
